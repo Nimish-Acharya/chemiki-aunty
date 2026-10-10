@@ -1,0 +1,18 @@
+.stepper { list-style: none; display: flex; gap: 8px; margin: 0 0 20px; padding: 0; flex-wrap: wrap; }
+.item { flex: 1; min-width: 140px; }
+.button {
+  width: 100%; display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+  background: var(--bg-panel); border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text-muted); font: inherit; text-align: left;
+}
+.button:disabled { cursor: default; }
+.done { cursor: pointer; color: var(--text); }
+.done:hover { background: var(--bg-hover); }
+.current { border-color: var(--primary); color: var(--text); }
+.circle {
+  width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid var(--border-strong); font-size: 12px; font-weight: 700;
+}
+.current .circle { background: var(--primary); border-color: var(--primary); color: #04202a; }
+.done .circle { background: rgba(52, 211, 153, 0.15); border-color: var(--success); color: var(--success); }
+.label { font-size: 13px; font-weight: 600; }

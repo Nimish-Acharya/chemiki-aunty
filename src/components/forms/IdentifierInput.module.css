@@ -1,0 +1,4 @@
+.row { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 12px; background: var(--bg-input); }
+.invalid { border-color: rgba(248, 113, 113, 0.6); }
+.fileInfo { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.preview { width: 72px; height: 72px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); }

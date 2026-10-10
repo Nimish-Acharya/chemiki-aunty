@@ -1,0 +1,60 @@
+/* DESIGN TOKENS: every color, size and radius lives here.
+   Change a value once and the whole app updates. */
+:root {
+  --bg-app: #0b1020;
+  --bg-panel: #121a2f;
+  --bg-raised: #172140;
+  --bg-hover: #1b2542;
+  --bg-input: #0e1528;
+
+  --border: #26324f;
+  --border-strong: #3a4a73;
+  --text: #e6ebf5;
+  --text-muted: #9aa6c3;
+
+  --primary: #22d3ee;       /* actions and selected items */
+  --primary-strong: #0891b2;
+  --secondary: #a78bfa;     /* categories and relationships */
+  --warning: #fbbf24;       /* uncertain findings */
+  --danger: #f87171;        /* meaningful alerts */
+  --success: #34d399;       /* finished work */
+
+  --radius: 8px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+  --topbar-height: 56px;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-app);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 600; }
+h1 { font-size: 22px; }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+p { margin: 0; }
+a { color: var(--primary); }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Respect users who ask their system for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

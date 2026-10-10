@@ -1,0 +1,126 @@
+/* SHARED COMPONENT STYLES: buttons, inputs, cards, badges, tables, dialogs.
+   Feature-specific layout lives in each component's own .module.css file. */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong); background: var(--bg-raised);
+  color: var(--text); font: inherit; cursor: pointer; text-decoration: none;
+}
+.btn:hover:not(:disabled) { background: var(--bg-hover); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: #04202a; font-weight: 600; }
+.btn-primary:hover:not(:disabled) { background: #67e8f9; }
+.btn-danger { background: var(--danger); border-color: var(--danger); color: #2a0606; font-weight: 600; }
+.btn-danger:hover:not(:disabled) { background: #fca5a5; }
+.btn-ghost { background: transparent; border-color: transparent; color: var(--text-muted); }
+
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: var(--radius-sm);
+  border: none; background: transparent; color: var(--text-muted); cursor: pointer;
+}
+.icon-btn:hover:not(:disabled) { background: var(--bg-hover); color: var(--text); }
+.icon-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.icon-btn.danger:hover:not(:disabled) { color: var(--danger); }
+
+/* ---------- Cards and layout helpers ---------- */
+.card {
+  background: var(--bg-panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow);
+}
+.card-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.row-between { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.muted { color: var(--text-muted); }
+.small { font-size: 12px; }
+.mono { font-family: var(--font-mono); font-size: 13px; }
+
+/* ---------- Form fields ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label { font-size: 13px; font-weight: 600; }
+.field-hint { font-size: 12px; color: var(--text-muted); }
+.field-error { font-size: 12px; color: var(--danger); }
+.required-mark { color: var(--danger); margin-left: 2px; }
+
+.input {
+  width: 100%; padding: 8px 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong); background: var(--bg-input);
+  color: var(--text); font: inherit;
+}
+.input::placeholder { color: #66749a; }
+.input:hover { border-color: #51648f; }
+.input.invalid { border-color: var(--danger); }
+textarea.input { resize: vertical; min-height: 84px; }
+select.input { cursor: pointer; }
+
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.form-grid .full { grid-column: 1 / -1; }
+@media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; border: 1px solid transparent; white-space: nowrap;
+}
+.badge-neutral { background: #1d2744; color: var(--text-muted); border-color: var(--border-strong); }
+.badge-info    { background: rgba(34, 211, 238, 0.12); color: var(--primary); border-color: rgba(34, 211, 238, 0.4); }
+.badge-success { background: rgba(52, 211, 153, 0.12); color: var(--success); border-color: rgba(52, 211, 153, 0.4); }
+.badge-warning { background: rgba(251, 191, 36, 0.12); color: var(--warning); border-color: rgba(251, 191, 36, 0.4); }
+.badge-danger  { background: rgba(248, 113, 113, 0.12); color: var(--danger); border-color: rgba(248, 113, 113, 0.4); }
+.badge-purple  { background: rgba(167, 139, 250, 0.12); color: var(--secondary); border-color: rgba(167, 139, 250, 0.4); }
+
+/* ---------- Banners ---------- */
+.banner {
+  display: flex; gap: 10px; align-items: flex-start; padding: 10px 14px;
+  border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: var(--bg-raised);
+}
+.banner-warning { border-color: rgba(251, 191, 36, 0.5); background: rgba(251, 191, 36, 0.08); }
+.banner-danger  { border-color: rgba(248, 113, 113, 0.5); background: rgba(248, 113, 113, 0.08); }
+
+/* ---------- Chips (tags) ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
+  border-radius: 999px; background: #1d2744; border: 1px solid var(--border-strong); font-size: 12px;
+}
+.chip button { background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0; display: inline-flex; }
+.chip button:hover { color: var(--danger); }
+
+/* ---------- Tables ---------- */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.table th { background: var(--bg-raised); font-size: 12px; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+.table tbody tr:last-child td { border-bottom: none; }
+.table tbody tr:hover { background: rgba(255, 255, 255, 0.025); }
+.table th button { background: none; border: none; color: inherit; font: inherit; font-weight: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 0; }
+.table th button:hover { color: var(--text); }
+.num { text-align: right !important; font-variant-numeric: tabular-nums; }
+
+/* ---------- Dialog (native <dialog>) ---------- */
+dialog.modal {
+  width: min(480px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--border-strong);
+  border-radius: var(--radius); background: var(--bg-panel); color: var(--text);
+}
+dialog.modal::backdrop { background: rgba(3, 6, 15, 0.7); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+.modal-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--border); }
+
+/* ---------- Skeleton loading ---------- */
+.skeleton {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, #172140 25%, #1f2b52 50%, #172140 75%);
+  background-size: 200% 100%; animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* ---------- Toasts ---------- */
+.toast-region { position: fixed; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 100; max-width: min(380px, calc(100vw - 32px)); }
+.toast { padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: var(--bg-raised); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); }
+.toast-success { border-color: rgba(52, 211, 153, 0.6); }
+.toast-error { border-color: rgba(248, 113, 113, 0.6); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

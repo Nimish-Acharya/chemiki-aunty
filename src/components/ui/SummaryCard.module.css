@@ -1,0 +1,8 @@
+.card { display: flex; gap: 12px; align-items: flex-start; }
+.icon { width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; flex-shrink: 0; }
+.primary   { background: rgba(34, 211, 238, 0.12); color: var(--primary); }
+.secondary { background: rgba(167, 139, 250, 0.12); color: var(--secondary); }
+.warning   { background: rgba(251, 191, 36, 0.12); color: var(--warning); }
+.danger    { background: rgba(248, 113, 113, 0.12); color: var(--danger); }
+.value { font-size: 24px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.label { font-size: 13px; margin-top: 2px; }
